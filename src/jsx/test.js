@@ -5,14 +5,16 @@ var React = require('react');
 
 var CommentBox = React.createClass({
 
-  onClick: function(){
+  handleClick: function(){
     console.log(this);
   },
 
   render: function() {
     return (
-      <div className="commentBox">
-        Hello, world! bro!.
+      <div 
+        onClick={this.handleClick}
+        className="commentBox">
+        Hello, world!.
       </div>
     );
   }

@@ -24,7 +24,13 @@ module.exports = function(grunt) {
         options: {
           stdout: true
         },
-        command: 'node ./node_modules/browserify/bin/cmd.js dist/test.js -o dist/bundle.js'
+        command: 'node ./node_modules/browserify/bin/cmd.js dist/main.js -o dist/bundle.js'
+      },
+      server: {
+        options: {
+          stdout: true
+        },
+        command: 'node srv/server.js'
       }
     },
     watch: {
@@ -40,6 +46,14 @@ module.exports = function(grunt) {
 
   grunt.registerTask('jsx', [
     'shell:jsx'
+  ]);
+
+  grunt.registerTask('b', [
+    'shell:browserify'
+  ]);
+
+  grunt.registerTask('s', [
+    'shell:server'
   ]);
 
   grunt.registerTask('dev', [

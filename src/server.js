@@ -4,11 +4,11 @@ var internals = {};
 
 //renderComponentToString
 
-var helloWorld = require('../dist/test');
+var mainLayout = require('../dist/main');
 
 var rootHandler = function (request, reply) {
   reply.view('index', {
-    react_component: React.renderComponentToString(helloWorld({}))
+    react_component: React.renderComponentToString(mainLayout({}))
   });
 };
 

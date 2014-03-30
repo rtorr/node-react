@@ -3,7 +3,7 @@
 var React = require('react');
 
 
-var CommentBox = React.createClass({
+var MainLayout = React.createClass({
 
   handleClick: function(){
     console.log(this);
@@ -13,8 +13,8 @@ var CommentBox = React.createClass({
     return (
       <div 
         onClick={this.handleClick}
-        className="commentBox">
-        Hello, world!.
+        className="hello-world">
+        Hello, world!
       </div>
     );
   }
@@ -22,9 +22,9 @@ var CommentBox = React.createClass({
 
 if (typeof window !== 'undefined') {
   React.renderComponent(
-    <CommentBox />,
-    document.getElementById('content')
+    <MainLayout />,
+    document.getElementById('main')
   );
 }
 
-module.exports = CommentBox;
+module.exports = MainLayout;

@@ -14,17 +14,11 @@ module.exports = function(grunt) {
       }
     },
     shell: {
-      jsx: {
-        options: {
-          stdout: true
-        },
-        command: 'node ./node_modules/react-tools/bin/jsx src/jsx/ dist/'
-      },
       browserify: {
         options: {
           stdout: true
         },
-        command: 'node ./node_modules/browserify/bin/cmd.js dist/main.js -o dist/bundle.js'
+        command: 'node ./node_modules/browserify/bin/cmd.js -t reactify src/jsx/main.js > dist/bundle.js '
       },
       server: {
         options: {
@@ -36,17 +30,13 @@ module.exports = function(grunt) {
     watch: {
       layouts: {
         files: ['./src/layouts/**/*.jade', './src/jsx/**/*.js'],
-        tasks: ['shell:jsx', 'shell:browserify', 'develop']
+        tasks: ['shell:browserify', 'develop']
       },
       options: { 
         nospawn: true 
       }
     }
   });
-
-  grunt.registerTask('jsx', [
-    'shell:jsx'
-  ]);
 
   grunt.registerTask('b', [
     'shell:browserify'
@@ -57,7 +47,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('dev', [
-    'shell:jsx',
+    'shell:browserify',
     'develop',
     'watch'
   ]);

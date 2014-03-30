@@ -1,10 +1,9 @@
+require('node-jsx').install();
+
 var Hapi = require('hapi');
 var React = require('react');
 var internals = {};
-
-//renderComponentToString
-
-var mainLayout = require('../dist/main');
+var mainLayout = require('./jsx/main');
 
 var rootHandler = function (request, reply) {
   reply.view('index', {

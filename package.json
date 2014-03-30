@@ -14,7 +14,9 @@
     "jade": "^1.3.0",
     "browserify": "^3.38.0",
     "matchdep": "^0.3.0",
-    "grunt-cli": "^0.1.13"
+    "grunt-cli": "^0.1.13",
+    "reactify": "^0.10.0",
+    "node-jsx": "^0.10.0"
   },
   "devDependencies": {
     "grunt": "^0.4.4",

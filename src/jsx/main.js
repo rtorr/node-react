@@ -1,21 +1,13 @@
 /** @jsx React.DOM */
 
 var React = require('react');
-
+var Header = require('./components/header');
 
 var MainLayout = React.createClass({
 
-  handleClick: function(){
-    console.log(this);
-  },
-
   render: function() {
     return (
-      <div 
-        onClick={this.handleClick}
-        className="hello-world">
-        Hello, world!
-      </div>
+      <Header />
     );
   }
 });

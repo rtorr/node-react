@@ -2,12 +2,18 @@
 
 var React = require('react');
 var Header = require('./components/header');
+var ListOfLinks = require('./components/link');
+
+
 
 var MainLayout = React.createClass({
 
   render: function() {
     return (
-      <Header />
+      <div>
+        <Header />
+        <ListOfLinks data={this.props.data} />
+      </div>
     );
   }
 });

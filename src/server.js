@@ -4,11 +4,14 @@ var Hapi = require('hapi');
 var React = require('react');
 var internals = {};
 var mainLayout = require('./jsx/main');
+var client = require('./client');
 
 var rootHandler = function (request, reply) {
-  reply.view('index', {
-    react_component: React.renderComponentToString(mainLayout({}))
-  });
+  client(function(data){
+    reply.view('index', {
+      react_component: React.renderComponentToString(mainLayout({data: data}))
+    });  
+  })
 };
 
 // Add the route

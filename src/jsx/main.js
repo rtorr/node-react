@@ -3,8 +3,7 @@
 var React = require('react');
 var Header = require('./components/header');
 var ListOfLinks = require('./components/link');
-
-
+var client = require('../client');
 
 var MainLayout = React.createClass({
 
@@ -19,10 +18,13 @@ var MainLayout = React.createClass({
 });
 
 if (typeof window !== 'undefined') {
-  React.renderComponent(
-    <MainLayout />,
-    document.getElementById('main')
-  );
+  client(function(data){
+    //data={data}
+    React.renderComponent(
+      <MainLayout data={data}/>,
+      document.getElementById('main')
+    );
+  })
 }
 
 module.exports = MainLayout;

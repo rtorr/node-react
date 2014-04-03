@@ -13,7 +13,7 @@ var Header = React.createClass({
       <div className="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
         <div className="container">
           <div className="navbar-header">
-            <a onClick={this.handleClick} href="#" className="navbar-brand">node-react</a>
+            <a onClick={this.handleClick} href="#" className="navbar-brand">reddit!</a>
           </div>
         </div>
       </div>

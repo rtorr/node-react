@@ -29,11 +29,19 @@ var options = {
 
   var server = new Hapi.Server(8000, options);
   server.route({
-      method: 'GET', path: '/dist/{path*}',
+    method: 'GET', 
+    path: '/dist/{path*}',
       handler: {
         file: { path: __dirname + '/../dist/bundle.js' }
       }
-    });
+  });
+  server.route({
+    method: 'GET', 
+    path: '/public/{path*}',
+      handler: {
+        file: { path: __dirname + '/public/css/style.css' }
+      }
+  });
   server.route({ method: 'GET', path: '/', handler: rootHandler });
   server.start();
 };
